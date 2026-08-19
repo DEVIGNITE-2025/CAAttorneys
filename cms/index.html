@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Article manager for Christelis Artemides Attorneys." />
+    <title>Article Manager | Christelis Artemides Attorneys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="../script.js" defer></script>
+    <script src="./cms.js" defer></script>
+  </head>
+  <body class="cms-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header site-header-dark" id="top">
+      <div class="header-inner shell">
+        <a class="brand" href="../" aria-label="Christelis Artemides Attorneys home"><span class="brand-logo brand-logo-light" role="img" aria-label="Christelis Artemides Attorneys logo"></span></a>
+        <nav class="desktop-nav" aria-label="Primary navigation"><a href="../">View website</a><a href="../publications/">Publications</a></nav>
+        <a class="header-cta" href="../publications/">View publications <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu"><span></span><span></span></button>
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true"><nav aria-label="Mobile navigation"><a href="../">View website</a><a href="../publications/">Publications</a></nav></div>
+
+    <main id="main-content" class="cms-main shell">
+      <section class="cms-intro">
+        <p class="eyebrow">Content management</p>
+        <h1>Manage <em>publications.</em></h1>
+        <p>Add, update or remove the articles displayed on the firm’s publications page. Changes are saved in this browser until a database is connected.</p>
+      </section>
+
+      <div class="cms-layout">
+        <section class="cms-form-card" aria-labelledby="article-form-heading">
+          <div class="cms-card-heading"><div><p class="eyebrow">Article editor</p><h2 id="article-form-heading">Add an article</h2></div><button class="cms-text-button" type="button" id="article-form-cancel" hidden>Cancel edit</button></div>
+          <form id="article-form" novalidate>
+            <input id="article-id" name="id" type="hidden" />
+            <div class="cms-form-grid">
+              <div class="cms-field cms-field-full"><label for="article-title">Article title <span aria-hidden="true">*</span></label><input id="article-title" name="title" type="text" required autocomplete="off" /><p class="cms-field-error" data-error-for="article-title"></p></div>
+              <div class="cms-field"><label for="article-author">Author <span aria-hidden="true">*</span></label><input id="article-author" name="author" type="text" required autocomplete="off" /><p class="cms-field-error" data-error-for="article-author"></p></div>
+              <div class="cms-field"><label for="article-law-type">Type of law <span aria-hidden="true">*</span></label><select id="article-law-type" name="lawType" required><option value="">Select a type of law</option><option value="Administration of estates">Administration of estates</option><option value="Commercial and corporate law">Commercial and corporate law</option><option value="Commercial litigation">Commercial litigation</option><option value="Franchise agreements">Franchise agreements</option><option value="Labour law">Labour law</option><option value="Landlord and tenant">Landlord and tenant</option><option value="Property law">Property law</option><option value="General legal">General legal</option></select><p class="cms-field-error" data-error-for="article-law-type"></p></div>
+              <div class="cms-field"><label for="article-date">Publication date <span aria-hidden="true">*</span></label><input id="article-date" name="date" type="date" required /><p class="cms-field-error" data-error-for="article-date"></p></div>
+              <div class="cms-field"><label for="article-status">Visibility</label><select id="article-status" name="status"><option value="published">Published</option><option value="draft">Draft</option></select></div>
+              <div class="cms-field cms-field-full"><label for="article-description">Description <span aria-hidden="true">*</span></label><textarea id="article-description" name="description" rows="6" required></textarea><p class="cms-field-error" data-error-for="article-description"></p></div>
+              <div class="cms-field cms-field-full"><label for="article-link">Article link <span class="cms-optional">optional</span></label><input id="article-link" name="link" type="url" placeholder="https://example.com/article" inputmode="url" /><p class="cms-field-help">Add the public article URL when one is available. Visitors will otherwise see the article card without a read link.</p><p class="cms-field-error" data-error-for="article-link"></p></div>
+              <div class="cms-field cms-field-full"><label for="article-pdf">Article PDF <span class="cms-optional">optional</span></label><input id="article-pdf" name="pdf" type="file" accept="application/pdf,.pdf" /><p class="cms-field-help">Upload a PDF up to 2 MB. When both a PDF and article link are provided, the PDF will be opened from the publications page.</p><p class="cms-file-selection" id="article-pdf-selection" hidden><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> <span id="article-pdf-name"></span> <button class="cms-text-button" type="button" id="article-pdf-remove">Remove PDF</button></p><p class="cms-field-error" data-error-for="article-pdf"></p></div>
+              <div class="cms-field cms-field-full"><label for="article-image">Featured image <span aria-hidden="true">*</span></label><input id="article-image" name="image" type="file" accept="image/jpeg,image/png,image/webp" /><p class="cms-field-help">JPG, PNG or WebP. Images are compressed before being saved locally.</p><p class="cms-field-error" data-error-for="article-image"></p></div>
+              <div class="cms-field cms-field-full"><label for="article-image-alt">Image description <span aria-hidden="true">*</span></label><input id="article-image-alt" name="imageAlt" type="text" required autocomplete="off" /><p class="cms-field-help">Describe the image for visitors using screen readers.</p><p class="cms-field-error" data-error-for="article-image-alt"></p></div>
+            </div>
+            <figure class="cms-image-preview" id="article-image-preview" hidden><img id="article-image-preview-image" alt="" /><figcaption id="article-image-preview-caption"></figcaption></figure>
+            <p class="cms-form-status" id="article-form-status" aria-live="polite"></p>
+            <button class="button cms-submit" type="submit"><span id="article-submit-label">Save article</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+          </form>
+        </section>
+
+        <section class="cms-list-card" aria-labelledby="article-list-heading">
+          <div class="cms-card-heading"><div><p class="eyebrow">Current content</p><h2 id="article-list-heading">All articles</h2></div><button class="cms-text-button cms-reset-button" type="button" id="restore-original-articles">Restore originals</button></div>
+          <p class="cms-list-summary" id="article-list-summary" aria-live="polite"></p>
+          <div class="cms-article-list" id="cms-article-list"></div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="cms-footer"><div class="shell"><span>© <span id="current-year"></span> Christelis Artemides Attorneys</span><span>Article manager</span></div></footer>
+  </body>
+</html>
